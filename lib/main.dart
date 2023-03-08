@@ -1,18 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:frisz/authentiction_handler.dart';
+import 'package:frisz/splash_screen.dart';
 
-void main() async{
-   WidgetsFlutterBinding.ensureInitialized();
-   await EasyLocalization.ensureInitialized();
-  //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('de')],
-      path: 'assets/translations', // <-- change the path of the translation files
-      fallbackLocale: Locale('en'),
-      child: MyApp()
-  ),
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('fr')],
+        path: 'assets/translations',
+        // <-- change the path of the translation files
+        fallbackLocale: Locale('en'),
+        child: MyApp()),
   );
 }
 
@@ -23,17 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Frisz',
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AuthenticationHandler(),
+      home: SplashFuturePage(),
     );
   }
 }
-
