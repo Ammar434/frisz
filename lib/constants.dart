@@ -1,1 +1,0 @@
-double kPaddingValue = 20;
