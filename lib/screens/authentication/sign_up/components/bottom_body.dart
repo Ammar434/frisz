@@ -14,11 +14,14 @@ class BottomBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "policy_ref",
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodySmall,
-        ).tr(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: kPaddingValue),
+          child: Text(
+            "policy_ref",
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodySmall,
+          ).tr(),
+        ),
         const HorizontalLine(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
