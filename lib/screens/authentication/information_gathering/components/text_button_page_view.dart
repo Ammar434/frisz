@@ -6,13 +6,13 @@ class TextButtonPageView extends StatelessWidget {
     super.key,
     required this.pageController,
     required this.text,
-    this.color,
     required this.onPress,
+    required this.isNext,
   });
 
   final PageController pageController;
   final String text;
-  final Color? color;
+  final bool isNext;
   final Function() onPress;
 
   @override
@@ -21,7 +21,9 @@ class TextButtonPageView extends StatelessWidget {
       onPressed: onPress,
       child: Text(
         text,
-        style: color != null ? const TextStyle(color: Colors.grey) : null,
+        style: Theme.of(context).textTheme.displaySmall!.copyWith(
+              color: isNext ? Theme.of(context).primaryColor : Colors.grey,
+            ),
         // style: Theme.of(context).textTheme.titleMedium,
       ).tr(),
     );

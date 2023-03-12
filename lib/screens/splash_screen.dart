@@ -4,6 +4,10 @@ import 'package:frisz/screens/authentication/authentiction_handler.dart';
 import 'package:frisz/screens/authentication/localization/localization_select_screen.dart';
 import 'package:frisz/services/shared_preferences.dart';
 
+late Image gradient1;
+late Image gradient2;
+late Image gradient3;
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -16,6 +20,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   Future<Widget> futureCall() async {
     await Future.delayed(const Duration(seconds: 2));
+
     bool isFirstLaunch = await MySharedPreferences.instance.getBooleanValue(
       SharedPrefKey.isfirstRun.toString(),
     );
@@ -23,9 +28,26 @@ class SplashScreenState extends State<SplashScreen> {
     if (!isFirstLaunch) {
       return Future.value(const LocalizationSelectScreen());
     }
+
     return Future.value(
       const AuthenticationHandler(),
     );
+  }
+
+  @override
+  void initState() {
+    gradient1 = Image.asset("assets/gradients/log_in.png");
+    gradient2 = Image.asset("assets/gradients/sign_in.png");
+    gradient3 = Image.asset("assets/gradients/welcome.png");
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(gradient1.image, context);
+    precacheImage(gradient2.image, context);
+    precacheImage(gradient3.image, context);
+    super.didChangeDependencies();
   }
 
   @override

@@ -1,227 +1,225 @@
-List<String> availaibleSportEn = [
-  "badminton",
-  "arena",
-  "archer",
-  "batter",
-  "bicycle",
-  "bike",
-  "bow",
-  "canoe",
-  "catch",
-  "cleats",
-  "club",
-  "coach",
-  "compete",
-  "crew",
-  "cricket",
-  "cycle",
-  "cyclist",
-  "dart",
-  "defense",
-  "diamond",
-  "dive",
-  "diver",
-  "fencing",
-  "field",
-  "fitness",
-  "frisbee",
-  "golf",
-  "golfer",
-  "guard",
-  "gym",
-  "gymnast",
-  "helmet",
-  "hockey",
-  "hoop",
-  "hoops",
-  "ice",
-  "infield",
-  "inning",
-  "javelin",
-  "jog",
-  "judo",
-  "jump",
-  "jumper",
-  "karate",
-  "kayak",
-  "kite",
-  "lacrosse",
-  "league",
-  "lose",
-  "loser",
-  "luge",
-  "major",
-  "mallet",
-  "mat",
-  "medal",
-  "mitt",
-  "move",
-  "net",
-  "offense",
-  "olympics",
-  "out",
-  "paddle",
-  "pitch",
-  "play",
-  "player",
-  "pole",
-  "polo",
-  "pool",
-  "puck",
-  "quarter",
-  "quiver",
-  "race",
-  "racer",
-  "referee",
-  "relay",
-  "ride",
-  "rink",
-  "row",
-  "rower",
-  "sail",
-  "score",
-  "scuba",
-  "skate",
-  "ski",
-  "skier",
-  "slalom",
-  "sled",
-  "sledder",
-  "snowboard",
-  "soccer",
-  "sport",
-  "squash",
-  "stick",
-  "surfer",
-  "swim",
-  "swimmer",
-  "tag",
-  "target",
-  "team",
-  "tee",
-  "tennis",
-  "throw",
-  "tie",
-  "triathlon",
-  "umpire",
-  "vault",
-  "volley",
-  "walk",
-  "weight",
-  "winning",
-  "wrestler"
-];
-
 List<String> availaibleSportFr = [
-  "badminton"
-      "arène"
-      "archer"
-      "Battre"
-      "vélo"
-      "vélo"
-      "arc"
-      "canoë"
-      "attraper"
-      "taquets"
-      "club"
-      "entraîneur"
-      "rivaliser"
-      "équipage"
-      "criquet"
-      "cycle"
-      "cycliste"
-      "dard"
-      "la défense"
-      "diamant"
-      "plonger"
-      "plongeur"
-      "escrime"
-      "champ"
-      "aptitude"
-      "frisbee"
-      "le golf"
-      "golfeur"
-      "garde"
-      "salle de sport"
-      "gymnaste"
-      "casque"
-      "le hockey"
-      "cerceau"
-      "cerceaux"
-      "glace"
-      "champ intérieur"
-      "tour de batte"
-      "javelot"
-      "faire du jogging"
-      "judo"
-      "saut"
-      "sauteur"
-      "karaté"
-      "kayak"
-      "cerf-volant"
-      "lacrosse"
-      "ligue"
-      "perdre"
-      "perdant"
-      "luge"
-      "majeur"
-      "maillet"
-      "tapis"
-      "médaille"
-      "gant"
-      "déplacer"
-      "filet"
-      "infraction"
-      "Jeux olympiques"
-      "dehors"
-      "pagayer"
-      "terrain"
-      "jouer"
-      "joueur"
-      "pôle"
-      "polo"
-      "piscine"
-      "palet"
-      "trimestre"
-      "trembler"
-      "course"
-      "coureur"
-      "arbitre"
-      "relais"
-      "conduire"
-      "patinoire"
-      "ligne"
-      "rameur"
-      "naviguer"
-      "score"
-      "scaphandre autonome"
-      "patin"
-      "ski"
-      "skieur"
-      "slalom"
-      "traîneau"
-      "traîneau"
-      "snowboard"
-      "football"
-      "sport"
-      "squash"
-      "bâton"
-      "surfeur"
-      "nager"
-      "nageur"
-      "étiqueter"
-      "cible"
-      "équipe"
-      "tee"
-      "tennis"
-      "lancer"
-      "cravate"
-      "triathlon"
-      "arbitre"
-      "sauter"
-      "volée"
-      "marcher"
-      "lester"
-      "gagnant"
-      "lutteur"
+  "Boxe américaine (Full-contact)",
+  "BMX",
+  "BMX freestyle",
+  "BMX Supercross",
+  "Cyclisme en salle",
+  "Cyclisme artistique",
+  "Cycle-ball",
+  "Cyclisme sur piste",
+  "Cyclisme sur route",
+  "Ultracyclisme",
+  "Cyclo-cross",
+  "Trial",
+  "Vélo tout terrain",
+  "Aïkido",
+  "Bando et Banshay",
+  "Capoeira",
+  "Hapkido",
+  "Ju-jitsu (jujutsu)",
+  "Jiu-jitsu brésilien",
+  "Judo",
+  "Kalarippayatt",
+  "Karaté",
+  "Kendo",
+  "Kobudo",
+  "Krabi krabong",
+  "Muay-boran",
+  "Ninjutsu",
+  "Sumo",
+  "Taekwondo",
+  "Tai-chi-chuan",
+  "Unifight",
+  "Viet vo dao",
+  "Viet vu dao",
+  "Wushu (Kung Fu)",
+  "Boxe",
+  "Boxe anglaise",
+  "Boxe birmane (Lethwei)",
+  "Boxe française (Savate)",
+  "Boxe thaïlandaise",
+  "Kick-boxing américain",
+  "Kick-boxing japonais (K1)",
+  "Canne et Bâton de combat",
+  "Escrime",
+  "Lutte",
+  "Brancaille",
+  "Catch",
+  "Grappling",
+  "Gouren (Lutte bretonne)",
+  "Lutte gréco-romaine",
+  "Lutte libre",
+  "Lutte sénégalaise",
+  "Lutte mongole",
+  "Lutte turque",
+  "Naban (Lutte birmane)",
+  "Ssirum",
+  "Sambo",
+  "Mixed martial art (MMA)",
+  "Krav-maga",
+  "Sport chanbara",
+  "Unifight",
+  "Sports de glace",
+  "Bandy",
+  "Bobsleigh",
+  "Curling",
+  "Eisstock",
+  "Hockey sur glace",
+  "Luge",
+  "Patinage",
+  "Patinage artistique",
+  "Danse sur glace",
+  "Patinage synchronisé",
+  "Patinage de vitesse",
+  "Short-track",
+  "Ringuette",
+  "Skeleton",
+  "Sports de plein air et de nature",
+  "Alpinisme",
+  "Canyonisme",
+  "Course d'orientation",
+  "Descente en rappel",
+  "Escalade sportive",
+  "Bloc (escalade)",
+  "Grimpe d'arbres",
+  "Pêche sportive",
+  "Escalade glaciaire",
+  "Raid nature",
+  "Randonnée pédestre",
+  "Spéléologie",
+  "Ultra-trail",
+  "Sports aériens",
+  "Aéromodélisme",
+  "Aérostation",
+  "Base jump",
+  "Cerf-volant",
+  "Deltaplane",
+  "Parachutisme",
+  "Parapente",
+  "ULM",
+  "Vol libre",
+  "Vol à voile",
+  "Voltige aérienne",
+  "Épreuves combinées",
+  "Triathlon",
+  "Duathlon",
+  "Aquathlon",
+  "Aquabike",
+  "Cross triathlon",
+  "Triathlon d'hiver",
+  "Pentathlon moderne",
+  "Combiné nordique",
+  "Biathlon",
+  "Racketlon",
+  "Micronesian all around",
+  "Unifight",
+  "Sports de précision",
+  "Airsoft",
+  "Ball-trap",
+  "Billards",
+  "Billard français",
+  "Billard américain",
+  "Billard anglais",
+  "Snooker",
+  "Boule bretonne",
+  "Boulingrin",
+  "Boomerang",
+  "Bowling",
+  "Croquet",
+  "Curling",
+  "Eisstock",
+  "Fléchettes",
+  "Golf",
+  "Jukskei",
+  "Minigolf",
+  "Paintball",
+  "Jeux de palets",
+  "Pétanque",
+  "Boule de fort",
+  "Quilles de neuf",
+  "Sarbacana",
+  "Sport boule (boule lyonnaise)",
+  "Tir",
+  "Tir à l'arc",
+  "Sports nautiques",
+  "Apnée",
+  "Aviron",
+  "Aviron de mer",
+  "Aviron Indoor",
+  "Barque de Sauvetage",
+  "Bateau-dragon",
+  "Canoë-kayak",
+  "Canyonisme",
+  "Char à voile",
+  "Chasse sous-marine",
+  "Dragon Boat",
+  "Hockey subaquatique",
+  "Motomarine",
+  "Joutes nautiques",
+  "Kayak-polo",
+  "Kitesurf",
+  "Nage avec palmes",
+  "Nage en eau libre",
+  "Nage en eau vive",
+  "Motonautisme",
+  "Natation",
+  "Natation synchronisée",
+  "Pêche sportive",
+  "Planche à voile",
+  "Plongée sous-marine",
+  "Plongeon",
+  "Rafting",
+  "Rugby subaquatique",
+  "Ski nautique",
+  "Surf",
+  "Voile",
+  "Water polo",
+  "Wakeboard",
+  "Wakesurf",
+  "Sports de glisse",
+  "Ski",
+  "Biathlon",
+  "Combiné nordique",
+  "Saut à ski",
+  "Snowboard",
+  "Ski alpin",
+  "Ski de randonnée",
+  "Ski acrobatique",
+  "Ski freestyle",
+  "Ski freeride",
+  "Ski de fond",
+  "Ski de vitesse",
+  "Ski extrême",
+  "Ski télémark",
+  "Sport électronique",
+  "Bodyboard",
+  "Freeboard",
+  "Kayak Surf",
+  "Kiteski",
+  "Kitesnow",
+  "Kitesurf",
+  "Mountainboard",
+  "Roller",
+  "Skateboard",
+  "Snowboard",
+  "Speed-riding",
+  "Streetboard",
+  "Surf",
+  "Voile sur glace",
+  "Longskate",
+  "Trottinette Freestyle",
+  "Belote",
+  "Bridge",
+  "Dames",
+  "Échecs",
+  "Go",
+  "Poker",
+  "Scrabble (marque déposée)",
+  "Échecs chinois",
+  "Speedcubing",
+  "Footbag",
+  "Main à main",
+  "Marche nordique",
+  "Sport stacking",
+  "Tricking",
 ];

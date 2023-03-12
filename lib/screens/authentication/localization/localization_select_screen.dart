@@ -1,9 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:frisz/screens/authentication/authentiction_handler.dart';
 import 'package:frisz/utils/constants.dart';
+import 'package:frisz/widgets/custom_text_buttom.dart';
 
 import '../../../services/shared_preferences.dart';
-import '../authentiction_handler.dart';
 
 class LocalizationSelectScreen extends StatefulWidget {
   const LocalizationSelectScreen({Key? key}) : super(key: key);
@@ -27,45 +28,39 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(kPaddingValue),
+          padding: const EdgeInsets.all(kPaddingValue),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Center(
                 child: Text(
                   "msg_welcome_localization",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 1,
+                      ),
                 ).tr(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  TextButton(
+                  CustomTextButton(
                     onPressed: () {
                       setState(() {
                         context.setLocale(const Locale('en'));
                       });
                     },
-                    child: Text(
-                      "en",
-                      style: TextStyle(
-                        decoration: !isLocaleFrench ? TextDecoration.underline : null,
-                      ),
-                    ).tr(),
+                    text: 'en',
+                    isUnderline: !isLocaleFrench,
                   ),
-                  TextButton(
+                  CustomTextButton(
                     onPressed: () {
                       setState(() {
                         context.setLocale(const Locale('fr'));
                       });
-                      debugPrint(context.locale.toString());
                     },
-                    child: Text(
-                      "fr",
-                      style: TextStyle(
-                        decoration: isLocaleFrench ? TextDecoration.underline : null,
-                      ),
-                    ).tr(),
+                    text: 'fr',
+                    isUnderline: isLocaleFrench,
                   ),
                 ],
               ),
@@ -73,7 +68,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
                 alignment: Alignment.bottomRight,
                 child: isLoading
                     ? const LinearProgressIndicator()
-                    : TextButton(
+                    : CustomTextButton(
                         onPressed: () async {
                           await MySharedPreferences.instance.setBooleanValue(
                             SharedPrefKey.isfirstRun.toString(),
@@ -86,9 +81,9 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
                             );
                           }
                         },
-                        child: const Text(
-                          "button_next",
-                        ).tr(),
+                        text: "button_next",
+                        isUnderline: false,
+                        isAction: true,
                       ),
               ),
             ],

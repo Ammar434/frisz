@@ -7,7 +7,8 @@
   "password_entry": "Entrer votre mot de passe",
   "password_entry_confirm": "Confirmer votre mot de passe",
 
-  "connect_button": "Se connecter",
+  "connect_button": "Connexion",
+  "register_button": "Inscription",
   "forget_password": "Mot de passe oublié?",
   "policy_ref": "En vous connectant, vous acceptez les conditions générales et la politique de confidentialité de FRISZ.",
   "change_to_sign_up_1": "Nouveau sur FRISZ ?",
@@ -38,8 +39,22 @@
   "page_view_4_1": "Exercez-vous une activité liée au sport dans le cadre professionnel ?",
   "page_view_4_2": "Oui",
   "page_view_4_3": "Non",
+  "page_view_4_bis_1": "Quel est votre profil sportif?",
+  "page_view_4_bis_2": "Sportifs professionnels",
+  "page_view_4_bis_3": "Amateurs",
+  "page_view_4_bis_4": "Fédérations",
+  "page_view_4_bis_5": "Ligue",
+  "page_view_4_bis_6": "Club",
+  "page_view_4_bis_7": "PMS",
+  "page_view_4_bis_8": "Entreprises",
+  "page_view_4_bis_9": "Marque",
+
   "page_view_5_1": "Quelle est votre profession ?",
+  "page_view_5_2": "Profession",
+  "page_view_5_3": "Chercher une profession",
   "page_view_6_1": "Quelle est votre sport de prédilection ?",
+  "page_view_6_2": "Selectionner sport",
+
   "page_view_7_1": "Bienvenue {}",
   "search_sport": "'Chercher un sport...'"
 }

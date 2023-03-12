@@ -8,10 +8,10 @@ class HorizontalLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: kSmallPaddingValue),
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: kSmallPaddingValue),
       child: Divider(
-        color: Theme.of(context).dividerColor,
+        color: Colors.white,
         height: 1,
         thickness: 1,
         indent: 10,

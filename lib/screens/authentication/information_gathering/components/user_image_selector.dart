@@ -34,7 +34,14 @@ class _UserImageSelectorState extends State<UserImageSelector> {
     shape: BoxShape.circle,
   );
   final kGradientBoxDecoration = BoxDecoration(
-    gradient: const LinearGradient(colors: [Color(0xff33ca87), Color(0xff39e2be)]),
+    gradient: const RadialGradient(
+      colors: [
+        Color(0xff2781ed),
+        Color(0xff00f6c6),
+      ],
+      center: Alignment.bottomRight,
+      radius: 0.8,
+    ),
     shape: BoxShape.circle,
     border: Border.all(
       width: 5,

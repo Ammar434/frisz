@@ -10,6 +10,7 @@ AppBar buildAppBar(BuildContext context, String title, {List<Widget>? trailling}
         },
         icon: const Icon(
           Icons.chevron_left,
+          color: Colors.white,
         ),
       ),
     ),
@@ -18,5 +19,6 @@ AppBar buildAppBar(BuildContext context, String title, {List<Widget>? trailling}
       style: Theme.of(context).textTheme.bodyLarge,
     ),
     actions: trailling ?? [],
+    backgroundColor: Colors.transparent,
   );
 }

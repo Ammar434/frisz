@@ -43,99 +43,105 @@ class _SixthScreenState extends State<SixthScreen> {
     return Padding(
       padding: const EdgeInsets.all(kPaddingValue),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const UserImageSelector(
-            isSelectable: false,
+          const Expanded(
+            child: UserImageSelector(
+              isSelectable: false,
+            ),
           ),
-          Column(
-            children: [
-              Text(
-                "page_view_6_1",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ).tr(),
-              const SizedBox(
-                height: kPaddingValue,
-              ),
-              DropdownButtonHideUnderline(
-                child: DropdownButton2<String>(
-                  isExpanded: true,
-                  hint: Text(
-                    'Select Item',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  items: availaibleSportEn
-                      .map(
-                        (item) => DropdownMenuItem(
-                          value: item,
-                          child: Text(
-                            item,
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ),
-                      )
-                      .toList(),
-                  value: temporaryFavoriteSport,
-                  onChanged: (value) {
-                    setState(() {
-                      temporaryFavoriteSport = value as String;
-                    });
-                  },
-                  buttonStyleData: ButtonStyleData(
-                    height: kPaddingValue * 3,
-                    // width: 160,
-                    padding: const EdgeInsets.only(left: 14, right: 14),
-                    decoration: boxDecoration,
-                  ),
-                  dropdownStyleData: const DropdownStyleData(
-                    maxHeight: 200,
-                  ),
-                  menuItemStyleData: const MenuItemStyleData(
-                    height: 40,
-                  ),
-                  dropdownSearchData: DropdownSearchData(
-                    searchController: textEditingController,
-                    searchInnerWidgetHeight: 50,
-                    searchInnerWidget: Container(
-                      height: 50,
-                      padding: const EdgeInsets.only(
-                        top: 8,
-                        bottom: 4,
-                        right: 8,
-                        left: 8,
+          Expanded(
+            child: Column(
+              children: [
+                Text(
+                  "page_view_6_1",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 1,
                       ),
-                      child: TextFormField(
-                        expands: true,
-                        maxLines: null,
-                        controller: textEditingController,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 8,
-                          ),
-                          hintText: "search_sport".tr(),
-                          hintStyle: const TextStyle(fontSize: 12),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                      ),
+                ).tr(),
+                const SizedBox(
+                  height: kPaddingValue,
+                ),
+                DropdownButtonHideUnderline(
+                  child: DropdownButton2<String>(
+                    isExpanded: true,
+                    hint: Text(
+                      'page_view_6_2'.tr(),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
-                    searchMatchFn: (item, searchValue) {
-                      return (item.value.toString().toLowerCase().contains(searchValue.toLowerCase()));
+                    items: availaibleSportFr
+                        .map(
+                          (item) => DropdownMenuItem(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                        )
+                        .toList(),
+                    value: temporaryFavoriteSport,
+                    onChanged: (value) {
+                      setState(() {
+                        temporaryFavoriteSport = value as String;
+                      });
+                    },
+                    buttonStyleData: ButtonStyleData(
+                      height: kPaddingValue * 3,
+                      // width: 160,
+                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      decoration: boxDecoration,
+                    ),
+                    dropdownStyleData: const DropdownStyleData(
+                      maxHeight: 200,
+                    ),
+                    menuItemStyleData: const MenuItemStyleData(
+                      height: 40,
+                    ),
+                    dropdownSearchData: DropdownSearchData(
+                      searchController: textEditingController,
+                      searchInnerWidgetHeight: 50,
+                      searchInnerWidget: Container(
+                        height: 50,
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          bottom: 4,
+                          right: 8,
+                          left: 8,
+                        ),
+                        child: TextFormField(
+                          expands: true,
+                          maxLines: null,
+                          controller: textEditingController,
+                          decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 8,
+                            ),
+                            hintText: "search_sport".tr(),
+                            hintStyle: const TextStyle(fontSize: 12),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                      ),
+                      searchMatchFn: (item, searchValue) {
+                        return (item.value.toString().toLowerCase().contains(searchValue.toLowerCase()));
+                      },
+                    ),
+                    //This to clear the search value when you close the menu
+                    onMenuStateChange: (isOpen) {
+                      if (!isOpen) {
+                        textEditingController.clear();
+                      }
                     },
                   ),
-                  //This to clear the search value when you close the menu
-                  onMenuStateChange: (isOpen) {
-                    if (!isOpen) {
-                      textEditingController.clear();
-                    }
-                  },
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           BottomRow(
             pageController: widget.pageController,

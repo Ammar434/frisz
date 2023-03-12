@@ -32,7 +32,10 @@ class _FourthScreenState extends State<FourthScreen> {
           Text(
             "page_view_4_1",
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 1,
+                ),
           ).tr(),
           Column(
             children: [
@@ -42,8 +45,10 @@ class _FourthScreenState extends State<FourthScreen> {
                     temporaryIsProfesionalAthelete = true;
                   });
                 },
+                getBorder: true,
                 text: "page_view_4_2".tr(),
-                color: temporaryIsProfesionalAthelete == false ? Colors.grey : null,
+                color: temporaryIsProfesionalAthelete == false ? Theme.of(context).cardColor : Colors.black,
+                textColor: !temporaryIsProfesionalAthelete == false ? Theme.of(context).cardColor : Colors.black,
               ),
               RoundedButton(
                 onTap: () {
@@ -51,8 +56,10 @@ class _FourthScreenState extends State<FourthScreen> {
                     temporaryIsProfesionalAthelete = false;
                   });
                 },
+                getBorder: true,
                 text: "page_view_4_3".tr(),
-                color: !temporaryIsProfesionalAthelete == false ? Colors.grey : null,
+                color: !temporaryIsProfesionalAthelete == false ? Theme.of(context).cardColor : Colors.black,
+                textColor: temporaryIsProfesionalAthelete == false ? Theme.of(context).cardColor : Colors.black,
               ),
             ],
           ),

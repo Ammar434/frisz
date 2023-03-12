@@ -7,9 +7,10 @@ class CustomUser {
   final String username;
   final String pseudo;
   final String country;
-  final String city;
+  final String state;
   final String profession;
   final String favoriteSport;
+  final String sportingProfile;
   final List followers;
   final List following;
   final bool isProfesionalAthelete;
@@ -20,13 +21,14 @@ class CustomUser {
     required this.photoUrl,
     required this.email,
     required this.country,
-    required this.city,
+    required this.state,
     required this.followers,
     required this.following,
     required this.isProfesionalAthelete,
     required this.profession,
     required this.favoriteSport,
     required this.pseudo,
+    required this.sportingProfile,
   });
 
   static CustomUser fromSnap(DocumentSnapshot snap) {
@@ -40,11 +42,12 @@ class CustomUser {
       country: snapshot["country"],
       followers: snapshot["followers"],
       following: snapshot["following"],
-      city: snapshot["city"],
+      state: snapshot["state"],
       isProfesionalAthelete: snapshot['isProfesionalAthelete'],
       profession: snapshot['profession'],
       favoriteSport: snapshot["favoriteSport"],
       pseudo: snapshot["pseudo"],
+      sportingProfile: snapshot["sportingProfile"],
     );
   }
 
@@ -54,12 +57,13 @@ class CustomUser {
         "email": email,
         "photoUrl": photoUrl,
         "country": country,
-        "city": city,
+        "state": state,
         "followers": followers,
         "following": following,
         "isProfesionalAthelete": isProfesionalAthelete,
         "profession": profession,
         "favoriteSport": favoriteSport,
         "pseudo": pseudo,
+        "sportingProfile": sportingProfile,
       };
 }

@@ -12,6 +12,8 @@ class RoundedButton extends StatelessWidget {
     this.width = double.infinity,
     this.shouldAnimate = false,
     this.height,
+    this.getBorder = false,
+    this.textColor = Colors.black,
   }) : super(key: key);
   final GestureTapCallback onTap;
   final String text;
@@ -21,12 +23,14 @@ class RoundedButton extends StatelessWidget {
   final Color? color;
   final double? width;
   final bool shouldAnimate;
+  final bool getBorder;
+  final Color textColor;
   // final Color secondaryColor;
   @override
   Widget build(BuildContext context) {
     Color? c = color;
     if (color == null) {
-      c = const Color(0xff1d93c1);
+      c = const Color(0xffffffff);
     }
     return GestureDetector(
       onTap: !isLoading ? onTap : null,
@@ -35,6 +39,7 @@ class RoundedButton extends StatelessWidget {
         width: width,
         height: height ?? kDefaultButtonSize,
         decoration: BoxDecoration(
+          border: getBorder ? Border.all(color: Colors.black) : null,
           borderRadius: BorderRadius.circular(kRadiusValue),
           color: shouldAnimate ? Colors.green : c,
         ),
@@ -47,7 +52,9 @@ class RoundedButton extends StatelessWidget {
                 )
               : Text(
                   text,
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                        color: textColor,
+                      ),
                 ),
         ),
       ),

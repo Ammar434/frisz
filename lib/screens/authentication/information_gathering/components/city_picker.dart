@@ -21,7 +21,7 @@ class _CityPickerState extends State<CityPicker> {
   Widget build(BuildContext context) {
     return CSCPicker(
       layout: Layout.vertical,
-
+      showCities: false,
       dropdownDecoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         color: Colors.white,
@@ -91,7 +91,7 @@ class _CityPickerState extends State<CityPicker> {
       onStateChanged: (value) {
         setState(() {
           ///store value in state variable
-          temporaryCity = value ?? "";
+          temporaryState = value ?? "";
         });
       },
 

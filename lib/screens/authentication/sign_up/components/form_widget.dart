@@ -75,7 +75,7 @@ class _FormWidgetState extends State<FormWidget> {
 
   String? checkPasswordField(value) {
     if (value == null || value.isEmpty) {
-      return 'Please entedr some text';
+      return 'Please enter some text';
     }
     if (value.length < 5) {
       return 'Choose a password of more than 8 letters';
@@ -149,7 +149,7 @@ class _FormWidgetState extends State<FormWidget> {
           // ),
           RoundedButton(
             onTap: formValidate,
-            text: "connect_button".tr(),
+            text: "register_button".tr(),
             isLoading: isLoading,
           )
         ],

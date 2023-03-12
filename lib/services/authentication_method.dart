@@ -10,10 +10,11 @@ import 'firebase_storage_methods.dart';
 
 Uint8List? temporaryUserImage;
 String temporaryCountry = "";
-String temporaryCity = "";
+String temporaryState = "";
 String? temporaryProfession;
 String? temporaryFavoriteSport;
 bool temporaryIsProfesionalAthelete = false;
+String tmpSportingProfile = "";
 
 class AuthenticationMethod {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -52,13 +53,14 @@ class AuthenticationMethod {
         photoUrl: profileImageUrl,
         email: email,
         country: temporaryCountry,
-        city: temporaryCity,
+        state: temporaryState,
         followers: [],
         following: [],
         isProfesionalAthelete: temporaryIsProfesionalAthelete,
         profession: temporaryProfession ?? "",
         favoriteSport: temporaryFavoriteSport ?? "",
         pseudo: pseudo,
+        sportingProfile: tmpSportingProfile,
       );
 
       await _firebaseFirestore.collection('users').doc(credential.user!.uid).set(customUser.toJson());

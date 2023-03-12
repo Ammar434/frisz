@@ -8,6 +8,7 @@
   "password_entry_confirm": "Confirm your password",
 
   "connect_button": "Log in",
+  "register_button": "Register",
   "forget_password": "Forgot your password?",
   "policy_ref": "By logging in, you agree to FRISZ's Terms and Conditions and Privacy Policy.",
   "change_to_sign_up_1": "New to FRISZ?",
@@ -38,8 +39,21 @@
   "page_view_4_1": "Do you carry out a sport-related activity in the professional context?",
   "page_view_4_2": "Yes",
   "page_view_4_3": "No",
+  "page_view_4_bis_1": "What is your sporting profile?",
+  "page_view_4_bis_2": "Professional athletes",
+  "page_view_4_bis_3": "Amateurs",
+  "page_view_4_bis_4": "Federations",
+  "page_view_4_bis_5": "Ligue",
+  "page_view_4_bis_6": "Club",
+  "page_view_4_bis_7": "PMS",
+  "page_view_4_bis_8": "Companies",
+  "page_view_4_bis_9": "Brand",
   "page_view_5_1": "What is your profession ?",
+  "page_view_5_2": "Occupation",
+  "page_view_5_3": "Find occupation",
+
   "page_view_6_1": "What is your favorite sport?",
+  "page_view_6_2": "Select sport",
   "page_view_7_1": "Welcome {}",
   "search_sport": "'Search for a sport...'"
 }

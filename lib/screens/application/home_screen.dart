@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frisz/models/custom_user.dart';
 import 'package:frisz/provider/user_provider.dart';
+import 'package:frisz/services/authentication_method.dart';
 import 'package:frisz/widgets/loading_widget.dart';
+import 'package:frisz/widgets/rounded_button.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -20,22 +22,32 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Text(
       'Home',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       'Likes',
       style: optionStyle,
     ),
-    Text(
+    const Text(
       'Search',
       style: optionStyle,
     ),
-    Text(
-      'Profile',
-      style: optionStyle,
+    Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text(
+          'Profile',
+          style: optionStyle,
+        ),
+        RoundedButton(
+            onTap: () {
+              AuthenticationMethod().signOut();
+            },
+            text: "Log out")
+      ],
     ),
   ];
 

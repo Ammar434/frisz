@@ -21,7 +21,10 @@ class FirstScreen extends StatelessWidget {
         children: [
           Text(
             "page_view_1_1",
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 1,
+                ),
           ).tr(),
           Text(
             "page_view_1_2",

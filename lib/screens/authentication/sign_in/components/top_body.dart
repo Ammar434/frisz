@@ -6,9 +6,7 @@ import 'package:frisz/utils/constants.dart';
 import 'form_widget.dart';
 
 class TopBody extends StatelessWidget {
-  TopBody({Key? key}) : super(key: key);
-
-  final _formKey = GlobalKey<FormState>();
+  const TopBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +17,8 @@ class TopBody extends StatelessWidget {
           Center(
             child: Text(
               kAppName,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: Colors.white,
                   ),
             ),
           ),
@@ -40,7 +37,9 @@ class TopBody extends StatelessWidget {
               },
               child: Text(
                 "forget_password",
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.white,
+                    ),
               ).tr(),
             ),
           )

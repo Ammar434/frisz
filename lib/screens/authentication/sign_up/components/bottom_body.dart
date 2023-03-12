@@ -15,11 +15,13 @@ class BottomBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kPaddingValue),
+          padding: const EdgeInsets.symmetric(horizontal: kPaddingValue / 2),
           child: Text(
             "policy_ref",
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodySmall,
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  color: Colors.white,
+                ),
           ).tr(),
         ),
         const HorizontalLine(),
@@ -28,7 +30,9 @@ class BottomBody extends StatelessWidget {
           children: [
             Text(
               "change_to_sign_in_1",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.white,
+                  ),
             ).tr(),
             TextButton(
               onPressed: () {
@@ -38,6 +42,8 @@ class BottomBody extends StatelessWidget {
                 "change_to_sign_in_2",
                 style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                      color: Colors.white,
                     ),
               ).tr(),
             )

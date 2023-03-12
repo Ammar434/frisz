@@ -5,6 +5,7 @@ import 'package:frisz/screens/authentication/information_gathering/components/bo
 import 'package:frisz/screens/authentication/information_gathering/components/user_image_selector.dart';
 import 'package:frisz/services/authentication_method.dart';
 import 'package:frisz/utils/constants.dart';
+import 'package:frisz/utils/profession_list.dart';
 
 class FifthScreen extends StatefulWidget {
   const FifthScreen({
@@ -19,16 +20,7 @@ class FifthScreen extends StatefulWidget {
 }
 
 class _FifthScreenState extends State<FifthScreen> {
-  final List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-  ];
+  final TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,75 +38,107 @@ class _FifthScreenState extends State<FifthScreen> {
     return Padding(
       padding: const EdgeInsets.all(kPaddingValue),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const UserImageSelector(
-            isSelectable: false,
+          const Expanded(
+            child: UserImageSelector(
+              isSelectable: false,
+            ),
           ),
-          Column(
-            children: [
-              Text(
-                "page_view_5_1",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ).tr(),
-              const SizedBox(
-                height: kPaddingValue,
-              ),
-              DropdownButtonHideUnderline(
-                child: DropdownButton2(
-                  isExpanded: true,
-                  items: items
-                      .map((item) => DropdownMenuItem<String>(
+          Expanded(
+            flex: 1,
+            child: Column(
+              children: [
+                Text(
+                  "page_view_5_1",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 1,
+                      ),
+                ).tr(),
+                const SizedBox(
+                  height: kPaddingValue,
+                ),
+                DropdownButtonHideUnderline(
+                  child: DropdownButton2<String>(
+                    isExpanded: true,
+                    hint: Text(
+                      'page_view_5_2'.tr(),
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                    items: availaibleProfessionFr
+                        .map(
+                          (item) => DropdownMenuItem(
                             value: item,
                             child: Text(
                               item,
-                              style: Theme.of(context).textTheme.bodyMedium,
                               overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                          ))
-                      .toList(),
-                  value: temporaryProfession,
-                  onChanged: (value) {
-                    setState(() {
-                      temporaryProfession = value as String;
-                    });
-                  },
-                  buttonStyleData: ButtonStyleData(
-                    height: kPaddingValue * 3,
-                    // width: 160,
-                    padding: const EdgeInsets.only(left: 14, right: 14),
-                    decoration: boxDecoration,
-                  ),
-                  iconStyleData: IconStyleData(
-                    icon: const Icon(
-                      Icons.arrow_forward_ios_outlined,
+                          ),
+                        )
+                        .toList(),
+                    value: temporaryFavoriteSport,
+                    onChanged: (value) {
+                      setState(() {
+                        temporaryFavoriteSport = value as String;
+                      });
+                    },
+                    buttonStyleData: ButtonStyleData(
+                      height: kPaddingValue * 3,
+                      // width: 160,
+                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      decoration: boxDecoration,
                     ),
-                    iconSize: 14,
-                    iconEnabledColor: Theme.of(context).hintColor,
-                    iconDisabledColor: Colors.grey,
-                  ),
-                  dropdownStyleData: DropdownStyleData(
-                    maxHeight: 200,
-                    // width: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Theme.of(context).cardColor,
+                    dropdownStyleData: const DropdownStyleData(
+                      maxHeight: 200,
                     ),
-                    elevation: 3,
-                    scrollbarTheme: ScrollbarThemeData(
-                      radius: const Radius.circular(kRadiusValue),
-                      thickness: MaterialStateProperty.all(6),
-                      thumbVisibility: MaterialStateProperty.all(true),
+                    menuItemStyleData: const MenuItemStyleData(
+                      height: 40,
                     ),
-                  ),
-                  menuItemStyleData: const MenuItemStyleData(
-                    height: 40,
-                    padding: EdgeInsets.only(left: 14, right: 14),
+                    dropdownSearchData: DropdownSearchData(
+                      searchController: textEditingController,
+                      searchInnerWidgetHeight: 50,
+                      searchInnerWidget: Container(
+                        height: 50,
+                        padding: const EdgeInsets.only(
+                          top: 8,
+                          bottom: 4,
+                          right: 8,
+                          left: 8,
+                        ),
+                        child: TextFormField(
+                          expands: true,
+                          maxLines: null,
+                          controller: textEditingController,
+                          decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 8,
+                            ),
+                            hintText: "page_view_5_3".tr(),
+                            hintStyle: const TextStyle(fontSize: 12),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                      ),
+                      searchMatchFn: (item, searchValue) {
+                        return (item.value.toString().toLowerCase().contains(searchValue.toLowerCase()));
+                      },
+                    ),
+                    //This to clear the search value when you close the menu
+                    onMenuStateChange: (isOpen) {
+                      if (!isOpen) {
+                        textEditingController.clear();
+                      }
+                    },
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           BottomRow(
             pageController: widget.pageController,

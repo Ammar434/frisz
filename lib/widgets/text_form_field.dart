@@ -24,30 +24,36 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   bool isObscure = true;
   @override
   Widget build(BuildContext context) {
-    final inputBorder = OutlineInputBorder(
-      borderSide: Divider.createBorderSide(context),
-    );
-
+    const inputBorder = OutlineInputBorder(
+        //Outline border type for TextFeild
+        borderRadius: BorderRadius.all(Radius.circular(kRadiusValue)),
+        borderSide: BorderSide(
+          color: Colors.transparent,
+          width: 3,
+        ));
     return Padding(
       padding: const EdgeInsets.only(bottom: kSmallPaddingValue),
       child: TextFormField(
         controller: widget.textEditingController,
-        style: Theme.of(context).textTheme.bodyMedium,
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: Colors.white,
+            ),
         validator: widget.validator,
         decoration: InputDecoration(
           hintText: widget.hintText,
           hintStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: Theme.of(context).hintColor,
+                color: Colors.white.withOpacity(0.8),
               ),
           border: inputBorder,
           focusedBorder: inputBorder,
           enabledBorder: inputBorder,
+          fillColor: Colors.black.withOpacity(0.3),
           filled: true,
           contentPadding: const EdgeInsets.all(kPaddingValue),
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(isObscure ? Icons.visibility_off : Icons.visibility),
-                  // color: Theme.of(context).primaryColor,
+                  color: Colors.white,
                   onPressed: () {
                     setState(
                       () {

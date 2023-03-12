@@ -26,7 +26,10 @@ class ThirdScreen extends StatelessWidget {
           ),
           Text(
             "page_view_3_1",
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 1,
+                ),
           ).tr(),
           const CityPicker(),
           BottomRow(

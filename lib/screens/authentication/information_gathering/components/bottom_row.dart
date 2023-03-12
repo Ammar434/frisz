@@ -6,12 +6,21 @@ class BottomRow extends StatelessWidget {
   const BottomRow({
     super.key,
     required this.pageController,
+    this.onTap,
   });
 
   final PageController pageController;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
+    Function() newFunc = onTap ??
+        () {
+          pageController.nextPage(
+            duration: kDurationValue,
+            curve: Curves.easeInOut,
+          );
+        };
     return Align(
       alignment: Alignment.centerRight,
       child: Row(
@@ -20,7 +29,7 @@ class BottomRow extends StatelessWidget {
           TextButtonPageView(
             pageController: pageController,
             text: "page_view_skip",
-            color: Colors.grey,
+            isNext: false,
             onPress: () {
               pageController.animateToPage(
                 7,
@@ -30,14 +39,10 @@ class BottomRow extends StatelessWidget {
             },
           ),
           TextButtonPageView(
+            isNext: true,
             pageController: pageController,
             text: "page_view_suivant",
-            onPress: () {
-              pageController.nextPage(
-                duration: kDurationValue,
-                curve: Curves.easeInOut,
-              );
-            },
+            onPress: newFunc,
           ),
         ],
       ),

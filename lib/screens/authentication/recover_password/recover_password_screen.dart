@@ -1,10 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:frisz/services/authentication_method.dart';
 import 'package:frisz/utils/constants.dart';
 import 'package:frisz/widgets/app_bar.dart';
 import 'package:frisz/widgets/rounded_button.dart';
 import 'package:frisz/widgets/text_form_field.dart';
+
+import '../../splash_screen.dart';
 
 class RecoverPasswordScreen extends StatefulWidget {
   const RecoverPasswordScreen({Key? key}) : super(key: key);
@@ -16,6 +19,8 @@ class RecoverPasswordScreen extends StatefulWidget {
 class _RecoverPasswordScreenState extends State<RecoverPasswordScreen> {
   final AuthenticationMethod authenticationMethod = AuthenticationMethod();
   late TextEditingController _emailController;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool isLoading = false;
 
   String? checkEmailField(value) {
     if (value == null || value.isEmpty) {
@@ -27,7 +32,20 @@ class _RecoverPasswordScreenState extends State<RecoverPasswordScreen> {
     return null;
   }
 
-  bool isLoading = false;
+  void formValidate(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      setState(() {
+        isLoading = true;
+      });
+      await authenticationMethod.resetPassword(
+        email: _emailController.text,
+      );
+      setState(() {
+        isLoading = false;
+      });
+    }
+  }
+
   @override
   void initState() {
     _emailController = TextEditingController();
@@ -44,49 +62,62 @@ class _RecoverPasswordScreenState extends State<RecoverPasswordScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(0xff52dbc4),
+        extendBodyBehindAppBar: true,
         appBar: buildAppBar(context, ""),
-        body: Padding(
-          padding: const EdgeInsets.all(kPaddingValue),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "recover_password_title",
-                style: Theme.of(context).textTheme.titleMedium,
-              ).tr(),
-              Text(
-                "recover_password_description",
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleSmall,
-              ).tr(),
-              const SizedBox(
-                height: kPaddingValue,
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: gradient1.image,
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Animate(
+            delay: kDurationValue,
+            effects: const [FadeEffect()],
+            child: Padding(
+              padding: const EdgeInsets.all(kPaddingValue),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "recover_password_title",
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 1,
+                            color: Colors.white,
+                          ),
+                    ).tr(),
+                    Text(
+                      "recover_password_description",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            color: Colors.white,
+                          ),
+                    ).tr(),
+                    const SizedBox(
+                      height: kPaddingValue,
+                    ),
+                    CustomTextFormField(
+                      textEditingController: _emailController,
+                      hintText: "mail_entry".tr(),
+                      textInputType: TextInputType.emailAddress,
+                      validator: checkEmailField,
+                    ),
+                    const SizedBox(
+                      height: kPaddingValue,
+                    ),
+                    RoundedButton(
+                      onTap: () => formValidate(context),
+                      text: "recover_password_btn".tr(),
+                    ),
+                  ],
+                ),
               ),
-              CustomTextFormField(
-                textEditingController: _emailController,
-                hintText: "mail_entry".tr(),
-                textInputType: TextInputType.emailAddress,
-                validator: checkEmailField,
-              ),
-              const SizedBox(
-                height: kPaddingValue,
-              ),
-              RoundedButton(
-                onTap: () async {
-                  setState(() {
-                    isLoading = true;
-                  });
-                  await authenticationMethod.resetPassword(
-                    email: _emailController.text,
-                  );
-                  setState(() {
-                    isLoading = false;
-                  });
-                },
-                text: "recover_password_btn".tr(),
-              ),
-            ],
+            ),
           ),
         ),
       ),

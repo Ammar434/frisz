@@ -13,7 +13,7 @@ ThemeData initTheme() {
     primaryKey: backgroundColor,
     secondaryKey: primaryColor,
     // tertiaryKey: iconColor,
-    tones: FlexTones.oneHue(Brightness.light),
+    tones: FlexTones.vivid(Brightness.light),
   );
 
   TextThemeProvider textThemeProvider = TextThemeProvider();
@@ -28,9 +28,12 @@ ThemeData initTheme() {
     // brightness: Brightness.dark,
     colorScheme: schemeLight,
     textTheme: TextTheme(
-      titleLarge: textThemeProvider.h1,
-      titleMedium: textThemeProvider.title1,
-      titleSmall: textThemeProvider.title2,
+      titleLarge: textThemeProvider.title1,
+      titleMedium: textThemeProvider.title2,
+      headlineLarge: textThemeProvider.appTitle,
+      displayLarge: textThemeProvider.h1,
+      displayMedium: textThemeProvider.h2,
+      displaySmall: textThemeProvider.h3,
       bodyLarge: textThemeProvider.body,
       bodyMedium: textThemeProvider.bodySmall,
       bodySmall: textThemeProvider.bodySmall,

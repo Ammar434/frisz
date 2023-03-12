@@ -15,9 +15,8 @@ class TopBody extends StatelessWidget {
           Center(
             child: Text(
               kAppName,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: Colors.white,
                   ),
             ),
           ),

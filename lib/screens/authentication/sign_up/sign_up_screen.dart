@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
+import '../../../utils/constants.dart';
+import '../../splash_screen.dart';
 import 'components/bottom_body.dart';
 import 'components/top_body.dart';
 
@@ -13,30 +16,35 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Full screen width and height
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
 // Height (without SafeArea)
     var padding = MediaQuery.of(context).viewPadding;
     double height1 = height - padding.top - padding.bottom;
 
-// Height (without status bar)
-    double height2 = height - padding.top;
-
-// Height (without status and toolbar)
-    double height3 = height - padding.top - kToolbarHeight;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(0xff52dbc4),
         body: SingleChildScrollView(
-          child: SizedBox(
+          child: Container(
             height: height1,
-            child: const Column(
-              children: [
-                Spacer(),
-                TopBody(),
-                Spacer(),
-                BottomBody(),
-              ],
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: gradient2.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Animate(
+              delay: kDurationValue,
+              effects: const [FadeEffect()],
+              child: const Column(
+                children: [
+                  Spacer(),
+                  TopBody(),
+                  Spacer(),
+                  BottomBody(),
+                ],
+              ),
             ),
           ),
         ),

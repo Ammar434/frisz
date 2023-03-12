@@ -48,13 +48,13 @@ dependencies:
   google_nav_bar: ^5.0.6
   flutter_animate: ^4.1.0
   flex_seed_scheme: ^1.2.2
-  lottie: ^2.2.0
   image_picker: ^0.8.7
   csc_picker: ^0.2.7
   dropdown_button2: ^2.0.0
   flutter_secure_storage: ^8.0.0
   uuid: ^3.0.7
   provider: ^6.0.5
+  csv: ^5.0.1
 
 dev_dependencies:
   flutter_test:
@@ -79,8 +79,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/lotties/
     - assets/translations/
+    - assets/gradients/
+    - assets/excel/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -97,31 +98,38 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Cinzel
+    - family: Inter
       fonts:
-        - asset: assets/fonts/CinzelDecorative-Regular.ttf
-        - asset: assets/fonts/CinzelDecorative-Black.ttf
-        - asset: assets/fonts/CinzelDecorative-Bold.ttf
-    - family: Yeseva
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 900
+
+    - family: FreesiaUPC
       fonts:
-        - asset: assets/fonts/YesevaOne-Regular.ttf
-    - family: Tenor
-      fonts:
-        - asset: assets/fonts/TenorSans-Regular.ttf
-    - family: Raleway
-      fonts:
-        - asset: assets/fonts/Raleway-Regular.ttf
-        - asset: assets/fonts/Raleway-Italic.ttf
-          style: italic
-        - asset: assets/fonts/Raleway-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Raleway-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Raleway-ExtraBold.ttf
-          weight: 800
-    - family: MaShanZheng
-      fonts:
-        - asset: assets/fonts/MaShanZheng-Regular.ttf
-    - family: B612Mono
-      fonts:
-        - asset: assets/fonts/B612Mono-Regular.ttf
+        - asset: assets/fonts/upcfl.ttf
+
+    # - family: Cinzel
+    #   fonts:
+    #     - asset: assets/fonts/CinzelDecorative-Regular.ttf
+    #     - asset: assets/fonts/CinzelDecorative-Black.ttf
+    #     - asset: assets/fonts/CinzelDecorative-Bold.ttf
+    # - family: Yeseva
+    #   fonts:
+    #     - asset: assets/fonts/YesevaOne-Regular.ttf
+    # - family: Raleway
+    #   fonts:
+    #     - asset: assets/fonts/Raleway-Regular.ttf
+    #     - asset: assets/fonts/Raleway-Italic.ttf
+    #       style: italic
+    #     - asset: assets/fonts/Raleway-Medium.ttf
+    #       weight: 500
+    #     - asset: assets/fonts/Raleway-Bold.ttf
+    #       weight: 700
+    #     - asset: assets/fonts/Raleway-ExtraBold.ttf
+    #       weight: 800
+    # - family: MaShanZheng
+    #   fonts:
+    #     - asset: assets/fonts/MaShanZheng-Regular.ttf
+    # - family: B612Mono
+    #   fonts:
+    #     - asset: assets/fonts/B612Mono-Regular.ttf
