@@ -31,11 +31,7 @@ class BottomRow extends StatelessWidget {
             text: "page_view_skip",
             isNext: false,
             onPress: () {
-              pageController.animateToPage(
-                7,
-                duration: const Duration(seconds: 2),
-                curve: Curves.easeOut,
-              );
+              pageController.jumpToPage(8);
             },
           ),
           TextButtonPageView(

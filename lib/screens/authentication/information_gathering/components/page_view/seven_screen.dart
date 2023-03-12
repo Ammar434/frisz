@@ -80,6 +80,7 @@ class _SevenScreenState extends State<SevenScreen> {
                   const UserImageSelector(
                     isSelectable: false,
                   ),
+                  const Spacer(),
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Text(

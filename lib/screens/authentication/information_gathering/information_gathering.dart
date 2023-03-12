@@ -31,15 +31,22 @@ class InformationGathering extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: PageView.builder(
+          itemCount: page.length,
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           itemBuilder: (BuildContext context, int index) {
             if (index == 4 && temporaryIsProfesionalAthelete) {
-              return page[4];
-            } else if (index == 4 && !temporaryIsProfesionalAthelete) {
-              return page[5];
+              // return page[4];
+              // index = index + 1;
             }
+            if (index == 4 && !temporaryIsProfesionalAthelete) {
+              // return page[4];
+              // index = index + 1;
+              pageController.jumpToPage(5);
+            }
+            print(index);
             return page[index];
+            // }
           },
         ),
       ),

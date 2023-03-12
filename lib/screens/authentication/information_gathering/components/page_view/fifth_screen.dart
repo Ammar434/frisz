@@ -78,10 +78,10 @@ class _FifthScreenState extends State<FifthScreen> {
                           ),
                         )
                         .toList(),
-                    value: temporaryFavoriteSport,
+                    value: temporaryProfession,
                     onChanged: (value) {
                       setState(() {
-                        temporaryFavoriteSport = value as String;
+                        temporaryProfession = value as String;
                       });
                     },
                     buttonStyleData: ButtonStyleData(
