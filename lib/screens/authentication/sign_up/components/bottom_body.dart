@@ -13,6 +13,7 @@ class BottomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kPaddingValue / 2),

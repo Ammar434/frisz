@@ -39,7 +39,10 @@ class _SevenScreenState extends State<SevenScreen> {
           seconds: 3,
         ),
       ).then(
-        (value) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AuthenticationHandler())),
+        (value) => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const AuthenticationHandler())),
       );
     } else {
       if (mounted) {
@@ -80,14 +83,13 @@ class _SevenScreenState extends State<SevenScreen> {
                   const UserImageSelector(
                     isSelectable: false,
                   ),
-                  const Spacer(),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Text(
-                      "page_view_7_1",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ).tr(args: [name]),
-                  )
+                  SizedBox(
+                    height: kPaddingValue * 3,
+                  ),
+                  Text(
+                    "page_view_7_1",
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ).tr(args: [name])
                 ],
               ),
       ),

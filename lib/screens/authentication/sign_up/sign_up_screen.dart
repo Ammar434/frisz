@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../utils/constants.dart';
 import '../../splash_screen.dart';
@@ -17,6 +18,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Full screen width and height
     double height = MediaQuery.of(context).size.height;
+    final ScrollController scrollController = ScrollController();
 
 // Height (without SafeArea)
     var padding = MediaQuery.of(context).viewPadding;
@@ -25,25 +27,36 @@ class SignUpScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xff52dbc4),
-        body: SingleChildScrollView(
-          child: Container(
-            height: height1,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: gradient2.image,
-                fit: BoxFit.cover,
-              ),
+        body: Container(
+          height: height1,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: gradient2.image,
+              fit: BoxFit.cover,
             ),
-            child: Animate(
-              delay: kDurationValue,
-              effects: const [FadeEffect()],
-              child: const Column(
-                children: [
-                  Spacer(),
-                  TopBody(),
-                  Spacer(),
-                  BottomBody(),
-                ],
+          ),
+          child: Animate(
+            delay: kDurationValue,
+            effects: const [FadeEffect()],
+            child: SizedBox(
+              height: ScreenUtil().screenHeight,
+              child: SingleChildScrollView(
+                reverse: true,
+                child: Column(
+                  //   physics: NeverScrollableScrollPhysics(),
+
+                  //mainAxisSize: MainAxisSize.max,
+                  children: [
+                    TopBody(),
+                    SizedBox(
+                      height: ScreenUtil().screenHeight < 700
+                          ? 0
+                          : kPaddingValue * 4.sp,
+                    ),
+                    //  Spacer(),
+                    BottomBody(),
+                  ],
+                ),
               ),
             ),
           ),

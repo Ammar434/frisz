@@ -31,8 +31,7 @@
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>
-			<string>UIInterfaceOrientationLandscapeLeft</string>
-			<string>UIInterfaceOrientationLandscapeRight</string>
+
 		</array>
 		<key>UISupportedInterfaceOrientations~ipad</key>
 		<array>
@@ -54,9 +53,7 @@
 		<string>This app does not require access to the microphone.</string>
 		<key>NSCameraUsageDescription</key>
 		<string>This app does not requires access to the camera.</string>
-		<array>
-			<string>UIInterfaceOrientationPortrait</string>
-		</array>
+
 
 	</dict>
 </plist>

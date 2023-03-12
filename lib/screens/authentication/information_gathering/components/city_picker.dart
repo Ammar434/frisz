@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:csc_picker/csc_picker.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +19,13 @@ class _CityPickerState extends State<CityPicker> {
   String? stateValue = "";
   String? cityValue = "";
   String? countryValue = "";
+
   @override
   Widget build(BuildContext context) {
     return CSCPicker(
-      layout: Layout.vertical,
+      layout: Platform.isAndroid ? Layout.vertical : Layout.horizontal,
       showCities: false,
+      //showStates: false,
       dropdownDecoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         color: Colors.white,
@@ -65,7 +69,8 @@ class _CityPickerState extends State<CityPicker> {
       ),
 
       ///DropdownDialog Heading style [OPTIONAL PARAMETER]
-      dropdownHeadingStyle: const TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
+      dropdownHeadingStyle: const TextStyle(
+          color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
 
       ///DropdownDialog Item style [OPTIONAL PARAMETER]
       dropdownItemStyle: const TextStyle(

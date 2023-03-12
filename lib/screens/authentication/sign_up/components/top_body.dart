@@ -9,8 +9,14 @@ class TopBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: const EdgeInsets.only(
+        left: kPaddingValue,
+        right: kPaddingValue,
+        top: kPaddingValue,
+      ),
       child: Column(
+        // shrinkWrap: true,
+        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Center(
             child: Text(

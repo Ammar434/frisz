@@ -112,8 +112,11 @@ class _FormWidgetState extends State<FormWidget> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        //  mainAxisSize: MainAxisSize.max,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextFormField(
             textEditingController: _emailController,
