@@ -7,7 +7,7 @@ import 'package:frisz/widgets/custom_text_buttom.dart';
 import '../../../services/shared_preferences.dart';
 
 class LocalizationSelectScreen extends StatefulWidget {
-  const LocalizationSelectScreen({Key? key}) : super(key: key);
+  LocalizationSelectScreen({Key? key}) : super(key: key);
 
   @override
   State<LocalizationSelectScreen> createState() => _LocalizationSelectScreenState();
@@ -17,7 +17,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
   bool isLoading = false;
   @override
   void initState() {
-    context.setLocale(const Locale('fr'));
+    context.setLocale(Locale('fr'));
     super.initState();
   }
 
@@ -28,7 +28,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(kPaddingValue),
+          padding: EdgeInsets.all(kPaddingValue),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -47,7 +47,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
                   CustomTextButton(
                     onPressed: () {
                       setState(() {
-                        context.setLocale(const Locale('en'));
+                        context.setLocale(Locale('en'));
                       });
                     },
                     text: 'en',
@@ -56,7 +56,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
                   CustomTextButton(
                     onPressed: () {
                       setState(() {
-                        context.setLocale(const Locale('fr'));
+                        context.setLocale(Locale('fr'));
                       });
                     },
                     text: 'fr',
@@ -67,7 +67,7 @@ class _LocalizationSelectScreenState extends State<LocalizationSelectScreen> {
               Align(
                 alignment: Alignment.bottomRight,
                 child: isLoading
-                    ? const LinearProgressIndicator()
+                    ? LinearProgressIndicator()
                     : CustomTextButton(
                         onPressed: () async {
                           await MySharedPreferences.instance.setBooleanValue(

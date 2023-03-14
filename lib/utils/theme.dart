@@ -20,7 +20,7 @@ ThemeData initTheme() {
 
   ThemeData appTheme = ThemeData(
     useMaterial3: true,
-    // appBarTheme: const AppBarTheme(
+    // appBarTheme:  AppBarTheme(
     //   backgroundColor: Colors.transparent,
     // ),
     visualDensity: VisualDensity.adaptivePlatformDensity,

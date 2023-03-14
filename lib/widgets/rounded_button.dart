@@ -35,7 +35,7 @@ class RoundedButton extends StatelessWidget {
     return GestureDetector(
       onTap: !isLoading ? onTap : null,
       child: AnimatedContainer(
-        margin: const EdgeInsets.all(6),
+        // margin: const EdgeInsets.all(6),
         width: width,
         height: height ?? kDefaultButtonSize,
         decoration: BoxDecoration(

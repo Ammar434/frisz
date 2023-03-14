@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:frisz/utils/colors.dart';
 import 'package:frisz/utils/constants.dart';
 
-class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({
+class CustomTextFormFieldTransparent extends StatefulWidget {
+  const CustomTextFormFieldTransparent({
     super.key,
     required this.textEditingController,
     required this.hintText,
@@ -17,38 +18,34 @@ class CustomTextFormField extends StatefulWidget {
   final String? Function(String?)? validator;
 
   @override
-  State<CustomTextFormField> createState() => _CustomTextFormFieldState();
+  State<CustomTextFormFieldTransparent> createState() => _CustomTextFormFieldTransparentState();
 }
 
-class _CustomTextFormFieldState extends State<CustomTextFormField> {
+class _CustomTextFormFieldTransparentState extends State<CustomTextFormFieldTransparent> {
   bool isObscure = true;
   @override
   Widget build(BuildContext context) {
     var inputBorder = OutlineInputBorder(
         //Outline border type for TextFeild
         borderRadius: BorderRadius.all(Radius.circular(kRadiusValue)),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-          width: 3,
+        borderSide: BorderSide(
+          color: kButtonColor,
+          width: 1,
         ));
     return Padding(
       padding: EdgeInsets.only(bottom: kSmallPaddingValue),
       child: TextFormField(
         controller: widget.textEditingController,
-        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: Colors.white,
-            ),
+        style: Theme.of(context).textTheme.bodyMedium,
         validator: widget.validator,
         decoration: InputDecoration(
-          hintText: widget.hintText,
-          hintStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: Colors.white.withOpacity(0.8),
-              ),
+          // hintText: widget.hintText,
+
           border: inputBorder,
           focusedBorder: inputBorder,
           enabledBorder: inputBorder,
-          fillColor: Colors.black.withOpacity(0.3),
-          filled: true,
+          // fillColor: Colors.black.withOpacity(0.3),
+          filled: false,
           contentPadding: EdgeInsets.all(kPaddingValue),
           suffixIcon: widget.isPassword
               ? IconButton(

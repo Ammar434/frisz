@@ -8,7 +8,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -21,24 +21,24 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+  static TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static final List<Widget> _widgetOptions = <Widget>[
-    const Text(
+    Text(
       'Home',
       style: optionStyle,
     ),
-    const Text(
+    Text(
       'Likes',
       style: optionStyle,
     ),
-    const Text(
+    Text(
       'Search',
       style: optionStyle,
     ),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
+        Text(
           'Profile',
           style: optionStyle,
         ),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     CustomUser? customUser = Provider.of<UserProvider>(context).getUser;
     return customUser == null
-        ? const LoadingWidget()
+        ? LoadingWidget()
         : Scaffold(
             backgroundColor: Colors.white,
             body: Center(
@@ -73,19 +73,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
                   child: GNav(
                     rippleColor: Colors.grey[300]!,
                     hoverColor: Colors.grey[100]!,
                     gap: 8,
                     activeColor: Colors.black,
                     iconSize: 24,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    duration: const Duration(milliseconds: 400),
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    duration: Duration(milliseconds: 400),
                     tabBackgroundColor: Colors.grey[100]!,
                     color: Colors.black,
                     tabs: [
-                      const GButton(
+                      GButton(
                         icon: Icons.home,
                         text: 'Home',
                       ),
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         textColor: Colors.teal,
                         iconSize: 24,
                         icon: Icons.person,
-                        leading: const CircleAvatar(
+                        leading: CircleAvatar(
                           radius: 12,
                           backgroundImage: NetworkImage(
                             'https://sooxt98.space/content/images/size/w100/2019/01/profile.png',
@@ -103,11 +103,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         text: customUser.pseudo,
                       ),
-                      const GButton(
+                      GButton(
                         icon: Icons.search,
                         text: 'Recherche',
                       ),
-                      const GButton(
+                      GButton(
                         icon: Icons.menu,
                         text: 'Menu',
                       ),

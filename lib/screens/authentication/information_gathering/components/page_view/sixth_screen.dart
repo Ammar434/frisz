@@ -8,7 +8,7 @@ import 'package:frisz/utils/constants.dart';
 import 'package:frisz/utils/sports_list.dart';
 
 class SixthScreen extends StatefulWidget {
-  const SixthScreen({
+  SixthScreen({
     super.key,
     required this.pageController,
   });
@@ -31,7 +31,7 @@ class _SixthScreenState extends State<SixthScreen> {
   @override
   Widget build(BuildContext context) {
     BoxDecoration boxDecoration = BoxDecoration(
-      borderRadius: const BorderRadius.all(Radius.circular(
+      borderRadius: BorderRadius.all(Radius.circular(
         kRadiusValue,
       )),
       color: Theme.of(context).splashColor,
@@ -41,10 +41,10 @@ class _SixthScreenState extends State<SixthScreen> {
       ),
     );
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         children: [
-          const Expanded(
+          Expanded(
             child: UserImageSelector(
               isSelectable: false,
             ),
@@ -60,7 +60,7 @@ class _SixthScreenState extends State<SixthScreen> {
                         letterSpacing: 1,
                       ),
                 ).tr(),
-                const SizedBox(
+                SizedBox(
                   height: kPaddingValue,
                 ),
                 DropdownButtonHideUnderline(
@@ -90,13 +90,13 @@ class _SixthScreenState extends State<SixthScreen> {
                     buttonStyleData: ButtonStyleData(
                       height: kPaddingValue * 3,
                       // width: 160,
-                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      padding: EdgeInsets.only(left: 14, right: 14),
                       decoration: boxDecoration,
                     ),
-                    dropdownStyleData: const DropdownStyleData(
+                    dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
                     ),
-                    menuItemStyleData: const MenuItemStyleData(
+                    menuItemStyleData: MenuItemStyleData(
                       height: 40,
                     ),
                     dropdownSearchData: DropdownSearchData(
@@ -104,7 +104,7 @@ class _SixthScreenState extends State<SixthScreen> {
                       searchInnerWidgetHeight: 50,
                       searchInnerWidget: Container(
                         height: 50,
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                           top: 8,
                           bottom: 4,
                           right: 8,
@@ -116,12 +116,12 @@ class _SixthScreenState extends State<SixthScreen> {
                           controller: textEditingController,
                           decoration: InputDecoration(
                             isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
+                            contentPadding: EdgeInsets.symmetric(
                               horizontal: 10,
                               vertical: 8,
                             ),
                             hintText: "search_sport".tr(),
-                            hintStyle: const TextStyle(fontSize: 12),
+                            hintStyle: TextStyle(fontSize: 12),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),

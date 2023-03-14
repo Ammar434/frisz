@@ -6,7 +6,7 @@ import 'package:frisz/widgets/horizontal_line.dart';
 import '../../../../utils/constants.dart';
 
 class BottomBody extends StatelessWidget {
-  const BottomBody({
+  BottomBody({
     super.key,
   });
 
@@ -15,7 +15,7 @@ class BottomBody extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kPaddingValue / 2),
+          padding: EdgeInsets.symmetric(horizontal: kPaddingValue / 2),
           child: Text(
             "policy_ref",
             textAlign: TextAlign.center,
@@ -24,7 +24,7 @@ class BottomBody extends StatelessWidget {
                 ),
           ).tr(),
         ),
-        const HorizontalLine(),
+        HorizontalLine(),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -49,7 +49,7 @@ class BottomBody extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(
+        SizedBox(
           height: kSmallPaddingValue,
         ),
       ],

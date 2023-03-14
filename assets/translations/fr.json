@@ -9,11 +9,11 @@
 
   "connect_button": "Connexion",
   "register_button": "Inscription",
-  "forget_password": "Mot de passe oublié?",
+  "forget_password": "Entrez votre e-mail",
   "policy_ref": "En vous connectant, vous acceptez les conditions générales et la politique de confidentialité de FRISZ.",
   "change_to_sign_up_1": "Nouveau sur FRISZ ?",
   "change_to_sign_up_2": "S’inscrire",
-  "recover_password_title": "Mot de passe oublié?",
+  "recover_password_title": "Entrez votre e-mail",
   "recover_password_description": "Entrez votre adresse e-mail pour récupérer votre mot de passe",
   "recover_password_btn": "Continuer",
   "signup_name": "Entrer votre nom et prénom",
@@ -55,6 +55,8 @@
   "page_view_6_1": "Quelle est votre sport de prédilection ?",
   "page_view_6_2": "Selectionner sport",
 
-  "page_view_7_1": "Bienvenue {}",
-  "search_sport": "'Chercher un sport...'"
+  "page_view_7_1": "Bonjour {}",
+  "search_sport": "'Chercher un sport...'",
+  "password_reset_confirm": "Nous venons de vous envoyer un mail afin de réinitialiser votre mot de passe",
+  "password_reset_return": "Retour à la page de connexion"
 }

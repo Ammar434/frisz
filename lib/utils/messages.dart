@@ -1,2 +1,2 @@
-const String SUCCESS_MESSAGE = "success";
-const String ERROR_MESSAGE = "Some error occured";
+String SUCCESS_MESSAGE = "success";
+String ERROR_MESSAGE = "Some error occured";

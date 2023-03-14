@@ -7,7 +7,7 @@ import 'package:frisz/widgets/rounded_button.dart';
 import 'package:frisz/widgets/text_form_field.dart';
 
 class FormWidget extends StatefulWidget {
-  const FormWidget({Key? key}) : super(key: key);
+  FormWidget({Key? key}) : super(key: key);
 
   @override
   State<FormWidget> createState() => _FormWidgetState();

@@ -6,12 +6,12 @@ import 'package:frisz/utils/constants.dart';
 import 'form_widget.dart';
 
 class TopBody extends StatelessWidget {
-  const TopBody({Key? key}) : super(key: key);
+  TopBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         children: [
           Center(
@@ -22,11 +22,11 @@ class TopBody extends StatelessWidget {
                   ),
             ),
           ),
-          const SizedBox(
+          SizedBox(
             height: kPaddingValue * 2,
           ),
-          const FormWidget(),
-          const SizedBox(
+          FormWidget(),
+          SizedBox(
             height: kSmallPaddingValue,
           ),
           Align(

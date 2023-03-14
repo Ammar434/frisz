@@ -7,7 +7,7 @@ import 'package:frisz/utils/constants.dart';
 import 'package:frisz/widgets/rounded_button.dart';
 
 class FourthScreen extends StatefulWidget {
-  const FourthScreen({
+  FourthScreen({
     super.key,
     required this.pageController,
   });
@@ -22,11 +22,11 @@ class _FourthScreenState extends State<FourthScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const UserImageSelector(
+          UserImageSelector(
             isSelectable: false,
           ),
           Text(

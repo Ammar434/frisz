@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../utils/utils.dart';
 
 class UserImageSelector extends StatefulWidget {
-  const UserImageSelector({
+  UserImageSelector({
     super.key,
     this.isSelectable = true,
   });
@@ -29,12 +29,12 @@ class _UserImageSelectorState extends State<UserImageSelector> {
   }
 
   final borderWidth = 1.0;
-  final kInnerDecoration = const BoxDecoration(
+  final kInnerDecoration = BoxDecoration(
     color: Colors.white,
     shape: BoxShape.circle,
   );
   final kGradientBoxDecoration = BoxDecoration(
-    gradient: const RadialGradient(
+    gradient: RadialGradient(
       colors: [
         Color(0xff2781ed),
         Color(0xff00f6c6),
@@ -52,7 +52,7 @@ class _UserImageSelectorState extends State<UserImageSelector> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: !widget.isSelectable ? const EdgeInsets.only(top: kPaddingValue * 2) : EdgeInsets.zero,
+      padding: !widget.isSelectable ? EdgeInsets.only(top: kPaddingValue * 2) : EdgeInsets.zero,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -70,7 +70,7 @@ class _UserImageSelectorState extends State<UserImageSelector> {
                         ),
                         // backgroundColor: Colors.red,
                       )
-                    : const CircleAvatar(
+                    : CircleAvatar(
                         radius: 64,
                         backgroundImage: NetworkImage(
                           'https://i.stack.imgur.com/l60Hf.png',
@@ -87,7 +87,7 @@ class _UserImageSelectorState extends State<UserImageSelector> {
               right: -10,
               child: IconButton(
                 onPressed: selectImage,
-                icon: const Icon(Icons.add_a_photo),
+                icon: Icon(Icons.add_a_photo),
               ),
             ),
           )

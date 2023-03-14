@@ -5,7 +5,7 @@ import 'package:frisz/utils/constants.dart';
 import '../bottom_row.dart';
 
 class FirstScreen extends StatelessWidget {
-  const FirstScreen({
+  FirstScreen({
     super.key,
     required this.pageController,
   });
@@ -15,7 +15,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -11,7 +11,7 @@ import '../bottom_row.dart';
 import '../user_image_selector.dart';
 
 class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key, required this.pageController}) : super(key: key);
+  SecondScreen({Key? key, required this.pageController}) : super(key: key);
   final PageController pageController;
 
   @override
@@ -31,7 +31,7 @@ class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -44,8 +44,8 @@ class _SecondScreenState extends State<SecondScreen> {
           ).tr(),
           Column(
             children: [
-              const UserImageSelector(),
-              const SizedBox(
+              UserImageSelector(),
+              SizedBox(
                 height: kPaddingValue,
               ),
               GestureDetector(

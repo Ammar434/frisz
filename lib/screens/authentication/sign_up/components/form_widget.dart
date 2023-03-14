@@ -35,6 +35,15 @@ class _FormWidgetState extends State<FormWidget> {
   }
 
   @override
+  void deactivate() {
+    _passwordController.clear();
+    _nameController.clear();
+    _emailController.clear();
+    _pseudoController.clear();
+    super.deactivate();
+  }
+
+  @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
@@ -114,7 +123,7 @@ class _FormWidgetState extends State<FormWidget> {
       key: _formKey,
       child: ListView(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         //  mainAxisSize: MainAxisSize.max,
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [

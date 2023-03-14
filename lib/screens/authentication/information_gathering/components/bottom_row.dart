@@ -3,7 +3,7 @@ import 'package:frisz/screens/authentication/information_gathering/components/te
 import 'package:frisz/utils/constants.dart';
 
 class BottomRow extends StatelessWidget {
-  const BottomRow({
+  BottomRow({
     super.key,
     required this.pageController,
     this.onTap,

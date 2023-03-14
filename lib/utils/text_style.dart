@@ -10,7 +10,7 @@ class TextThemeProvider {
   };
 
   // final Map<String, TextStyle> _monoTitleFonts = {
-  //   'en': const TextStyle(fontFamily: 'B612Mono'),
+  //   'en':  TextStyle(fontFamily: 'B612Mono'),
   // };
 
   final Map<String, TextStyle> _quoteFonts = {

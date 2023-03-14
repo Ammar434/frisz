@@ -1,12 +1,12 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+double kPaddingValue = 20.sp;
+double kSmallPaddingValue = 10.sp;
 
-const double kPaddingValue = 20;
-const double kSmallPaddingValue = 10;
+String kAppName = "FRISZ";
 
-const String kAppName = "FRISZ";
+double kRadiusValue = 10.sp;
 
-const double kRadiusValue = 10;
+double kDefaultButtonSize = 50.sp;
 
-const double kDefaultButtonSize = 50;
-
-const Duration kDurationValue = Duration(milliseconds: 500);
+Duration kDurationValue = const Duration(milliseconds: 500);

@@ -8,7 +8,7 @@ AppBar buildAppBar(BuildContext context, String title, {List<Widget>? trailling}
         onPressed: () {
           Navigator.pop(context);
         },
-        icon: const Icon(
+        icon: Icon(
           Icons.chevron_left,
           color: Colors.white,
         ),

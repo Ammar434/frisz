@@ -9,7 +9,7 @@ import '../../widgets/loading_widget.dart';
 
 class AuthenticationHandler extends StatelessWidget {
   static String name = "AuthenticationHandler";
-  const AuthenticationHandler({
+  AuthenticationHandler({
     Key? key,
   }) : super(key: key);
 
@@ -22,12 +22,12 @@ class AuthenticationHandler extends StatelessWidget {
           if (snapshot.hasData) {
             UserProvider? userProvider = Provider.of(context);
             if (userProvider == null) {
-              return const LoadingWidget();
+              return LoadingWidget();
             }
             Provider.of<UserProvider>(context).refreshUser();
-            return const HomeScreen();
+            return HomeScreen();
           } else if (snapshot.hasError) {
-            return const Center(
+            return Center(
               child: Text(
                 "Some internal error happen please contact the developper",
               ),
@@ -35,11 +35,11 @@ class AuthenticationHandler extends StatelessWidget {
           }
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
+          return Center(
             child: LoadingWidget(),
           );
         }
-        return const SignInScreen();
+        return SignInScreen();
       },
     );
   }

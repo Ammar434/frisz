@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:frisz/utils/colors.dart';
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({
+  CustomTextButton({
     super.key,
     required this.onPressed,
     required this.text,
@@ -21,7 +22,7 @@ class CustomTextButton extends StatelessWidget {
         text,
         style: Theme.of(context).textTheme.displaySmall!.copyWith(
               decoration: isUnderline ? TextDecoration.underline : null,
-              color: isAction ? Theme.of(context).primaryColor : null,
+              color: isAction ? kTextButtonColor : null,
             ),
       ).tr(),
     );

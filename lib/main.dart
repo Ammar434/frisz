@@ -15,19 +15,19 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
-      supportedLocales: const [
+      supportedLocales: [
         Locale('en'),
         Locale('fr'),
       ],
       path: 'assets/translations',
-      fallbackLocale: const Locale('en'),
-      child: const MyApp(),
+      fallbackLocale: Locale('en'),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return ScreenUtilInit(
-        designSize: const Size(393, 852),
+        designSize: Size(393, 852),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, snapshot) {
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               theme: initTheme(),
               routes: routes,
-              home: const SplashScreen(),
+              home: SplashScreen(),
             ),
           );
         });

@@ -15,7 +15,7 @@ class CustomUser {
   final List following;
   final bool isProfesionalAthelete;
 
-  const CustomUser({
+  CustomUser({
     required this.username,
     required this.uid,
     required this.photoUrl,

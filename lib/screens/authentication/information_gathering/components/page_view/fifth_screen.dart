@@ -8,7 +8,7 @@ import 'package:frisz/utils/constants.dart';
 import 'package:frisz/utils/profession_list.dart';
 
 class FifthScreen extends StatefulWidget {
-  const FifthScreen({
+  FifthScreen({
     super.key,
     required this.pageController,
   });
@@ -25,7 +25,7 @@ class _FifthScreenState extends State<FifthScreen> {
   @override
   Widget build(BuildContext context) {
     BoxDecoration boxDecoration = BoxDecoration(
-      borderRadius: const BorderRadius.all(Radius.circular(
+      borderRadius: BorderRadius.all(Radius.circular(
         kRadiusValue,
       )),
       color: Theme.of(context).splashColor,
@@ -36,10 +36,10 @@ class _FifthScreenState extends State<FifthScreen> {
     );
 
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         children: [
-          const Expanded(
+          Expanded(
             child: UserImageSelector(
               isSelectable: false,
             ),
@@ -56,7 +56,7 @@ class _FifthScreenState extends State<FifthScreen> {
                         letterSpacing: 1,
                       ),
                 ).tr(),
-                const SizedBox(
+                SizedBox(
                   height: kPaddingValue,
                 ),
                 DropdownButtonHideUnderline(
@@ -87,13 +87,13 @@ class _FifthScreenState extends State<FifthScreen> {
                     buttonStyleData: ButtonStyleData(
                       height: kPaddingValue * 3,
                       // width: 160,
-                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      padding: EdgeInsets.only(left: 14, right: 14),
                       decoration: boxDecoration,
                     ),
-                    dropdownStyleData: const DropdownStyleData(
+                    dropdownStyleData: DropdownStyleData(
                       maxHeight: 200,
                     ),
-                    menuItemStyleData: const MenuItemStyleData(
+                    menuItemStyleData: MenuItemStyleData(
                       height: 40,
                     ),
                     dropdownSearchData: DropdownSearchData(
@@ -101,7 +101,7 @@ class _FifthScreenState extends State<FifthScreen> {
                       searchInnerWidgetHeight: 50,
                       searchInnerWidget: Container(
                         height: 50,
-                        padding: const EdgeInsets.only(
+                        padding: EdgeInsets.only(
                           top: 8,
                           bottom: 4,
                           right: 8,
@@ -113,12 +113,12 @@ class _FifthScreenState extends State<FifthScreen> {
                           controller: textEditingController,
                           decoration: InputDecoration(
                             isDense: true,
-                            contentPadding: const EdgeInsets.symmetric(
+                            contentPadding: EdgeInsets.symmetric(
                               horizontal: 10,
                               vertical: 8,
                             ),
                             hintText: "page_view_5_3".tr(),
-                            hintStyle: const TextStyle(fontSize: 12),
+                            hintStyle: TextStyle(fontSize: 12),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),

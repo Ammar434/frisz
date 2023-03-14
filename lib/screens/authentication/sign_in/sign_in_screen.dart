@@ -36,11 +36,11 @@ class SignInScreen extends StatelessWidget {
               child: Animate(
                 delay: kDurationValue,
                 effects: const [FadeEffect()],
-                child: const Column(
+                child: Column(
                   children: [
-                    Spacer(),
+                    const Spacer(),
                     TopBody(),
-                    Spacer(),
+                    const Spacer(),
                     BottomBody(),
                   ],
                 ),

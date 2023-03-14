@@ -13,7 +13,7 @@ import 'components/page_view/third_screen.dart';
 class InformationGathering extends StatelessWidget {
   static String name = 'InformationGathering';
 
-  const InformationGathering({Key? key}) : super(key: key);
+  InformationGathering({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class InformationGathering extends StatelessWidget {
       child: Scaffold(
         body: PageView.builder(
           itemCount: page.length,
-          physics: const NeverScrollableScrollPhysics(),
+          physics: NeverScrollableScrollPhysics(),
           controller: pageController,
           itemBuilder: (BuildContext context, int index) {
             if (index == 4 && temporaryIsProfesionalAthelete) {

@@ -13,7 +13,7 @@
   "policy_ref": "By logging in, you agree to FRISZ's Terms and Conditions and Privacy Policy.",
   "change_to_sign_up_1": "New to FRISZ?",
   "change_to_sign_up_2": "Register",
-  "recover_password_title": "Forgot your password?",
+  "recover_password_title": "Enter your e-mail",
   "recover_password_description": "Enter your email address to retrieve your password",
   "recover_password_btn": "Continue",
   "signup_name": "Enter your first and last name",
@@ -54,6 +54,8 @@
 
   "page_view_6_1": "What is your favorite sport?",
   "page_view_6_2": "Select sport",
-  "page_view_7_1": "Welcome {}",
-  "search_sport": "'Search for a sport...'"
+  "page_view_7_1": "Hello {}",
+  "search_sport": "'Search for a sport...'",
+  "password_reset_confirm": "We just sent you an email to reset your password",
+  "password_reset_return": "Back to login pages"
 }

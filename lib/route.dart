@@ -7,10 +7,10 @@ import 'package:frisz/screens/authentication/sign_in/sign_in_screen.dart';
 import 'package:frisz/screens/authentication/sign_up/sign_up_screen.dart';
 
 Map<String, WidgetBuilder> routes = {
-  AuthenticationHandler.name: (context) => const AuthenticationHandler(),
-  RecoverPasswordScreen.name: (context) => const RecoverPasswordScreen(),
-  SignInScreen.name: (context) => const SignInScreen(),
-  SignUpScreen.name: (context) => const SignUpScreen(),
-  WelcomeScreen.name: (context) => const WelcomeScreen(),
-  InformationGathering.name: (context) => const InformationGathering(),
+  AuthenticationHandler.name: (context) => AuthenticationHandler(),
+  RecoverPasswordScreen.name: (context) => RecoverPasswordScreen(),
+  SignInScreen.name: (context) => SignInScreen(),
+  SignUpScreen.name: (context) => SignUpScreen(),
+  WelcomeScreen.name: (context) => WelcomeScreen(),
+  InformationGathering.name: (context) => InformationGathering(),
 };

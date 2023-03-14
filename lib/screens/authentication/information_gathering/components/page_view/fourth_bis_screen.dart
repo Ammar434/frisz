@@ -18,7 +18,7 @@ List<String> options = [
 ];
 
 class FourthBisScreen extends StatefulWidget {
-  const FourthBisScreen({Key? key, required this.pageController}) : super(key: key);
+  FourthBisScreen({Key? key, required this.pageController}) : super(key: key);
   final PageController pageController;
 
   @override
@@ -29,11 +29,11 @@ class _FourthBisScreenState extends State<FourthBisScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Expanded(
+          Expanded(
             child: UserImageSelector(
               isSelectable: false,
             ),
@@ -46,13 +46,13 @@ class _FourthBisScreenState extends State<FourthBisScreen> {
                   letterSpacing: 1,
                 ),
           ).tr(),
-          const SizedBox(
+          SizedBox(
             height: kPaddingValue,
           ),
           Expanded(
             flex: 2,
             child: ListView.builder(
-              // physics: const NeverScrollableScrollPhysics(),
+              // physics:  NeverScrollableScrollPhysics(),
               itemCount: options.length,
               itemBuilder: (context, index) {
                 return RadioListTile(

@@ -17,11 +17,11 @@ class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(kPaddingValue),
+      padding: EdgeInsets.all(kPaddingValue),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const UserImageSelector(
+          UserImageSelector(
             isSelectable: false,
           ),
           Text(
@@ -31,7 +31,7 @@ class ThirdScreen extends StatelessWidget {
                   letterSpacing: 1,
                 ),
           ).tr(),
-          const CityPicker(),
+          CityPicker(),
           BottomRow(
             pageController: pageController,
           ),

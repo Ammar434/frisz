@@ -9,7 +9,7 @@ import '../../splash_screen.dart';
 class WelcomeScreen extends StatefulWidget {
   static String name = 'WelcomeScreen';
 
-  const WelcomeScreen({Key? key}) : super(key: key);
+  WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
@@ -20,7 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(
+      Duration(
         seconds: 3,
       ),
     ).then(
@@ -35,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xff52dbc4),
+        backgroundColor: Color(0xff52dbc4),
         body: Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
@@ -47,7 +47,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
           child: Animate(
             delay: kDurationValue,
-            effects: const [ScaleEffect(), FadeEffect()],
+            effects: [ScaleEffect(), FadeEffect()],
             child: Center(
               child: Text(
                 "welcome",

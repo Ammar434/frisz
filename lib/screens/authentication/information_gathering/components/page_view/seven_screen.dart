@@ -11,7 +11,7 @@ import 'package:frisz/widgets/loading_widget.dart';
 import '../../../../../services/secure_storage.dart';
 
 class SevenScreen extends StatefulWidget {
-  const SevenScreen({
+  SevenScreen({
     super.key,
     required this.pageController,
   });
@@ -35,14 +35,11 @@ class _SevenScreenState extends State<SevenScreen> {
         isVisible = false;
       });
       Future.delayed(
-        const Duration(
+        Duration(
           seconds: 3,
         ),
       ).then(
-        (value) => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const AuthenticationHandler())),
+        (value) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AuthenticationHandler())),
       );
     } else {
       if (mounted) {
@@ -51,7 +48,7 @@ class _SevenScreenState extends State<SevenScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const AuthenticationHandler(),
+            builder: (context) => AuthenticationHandler(),
           ),
         );
       }
@@ -75,12 +72,12 @@ class _SevenScreenState extends State<SevenScreen> {
       child: AnimatedSwitcher(
         duration: kDurationValue,
         child: isVisible
-            ? const LoadingWidget()
+            ? LoadingWidget()
             : Column(
                 key: UniqueKey(),
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const UserImageSelector(
+                  UserImageSelector(
                     isSelectable: false,
                   ),
                   SizedBox(

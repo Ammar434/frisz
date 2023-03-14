@@ -69,8 +69,7 @@ class _CityPickerState extends State<CityPicker> {
       ),
 
       ///DropdownDialog Heading style [OPTIONAL PARAMETER]
-      dropdownHeadingStyle: const TextStyle(
-          color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
+      dropdownHeadingStyle: const TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
 
       ///DropdownDialog Item style [OPTIONAL PARAMETER]
       dropdownItemStyle: const TextStyle(

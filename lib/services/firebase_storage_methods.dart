@@ -20,7 +20,7 @@ class FirebaseStorageMethods {
     Reference ref = firebaseStorage.ref().child(childName).child(firebaseAuth.currentUser!.uid);
 
     if (isPost == true) {
-      String id = const Uuid().v1();
+      String id = Uuid().v1();
       ref = ref.child(id);
     }
     try {
@@ -87,7 +87,7 @@ class FirebaseStorageMethods {
     Reference ref = firebaseStorage.ref().child(childName).child(firebaseAuth.currentUser!.uid);
 
     if (isPost == true) {
-      String id = const Uuid().v1();
+      String id = Uuid().v1();
       ref = ref.child(id);
     }
     try {

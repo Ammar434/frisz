@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageMethods {
-  final _storage = const FlutterSecureStorage();
+  final _storage = FlutterSecureStorage();
 
   Future<void> writeSecureUserData({
     required String email,

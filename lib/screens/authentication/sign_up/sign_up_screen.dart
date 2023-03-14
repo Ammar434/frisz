@@ -49,9 +49,7 @@ class SignUpScreen extends StatelessWidget {
                   children: [
                     TopBody(),
                     SizedBox(
-                      height: ScreenUtil().screenHeight < 700
-                          ? 0
-                          : kPaddingValue * 4.sp,
+                      height: ScreenUtil().screenHeight < 700 ? 0 : kPaddingValue * 4.sp,
                     ),
                     //  Spacer(),
                     BottomBody(),

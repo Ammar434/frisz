@@ -9,7 +9,7 @@ late Image gradient2;
 late Image gradient3;
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  SplashScreen({Key? key}) : super(key: key);
 
   @override
   SplashScreenState createState() => SplashScreenState();
@@ -19,18 +19,18 @@ class SplashScreenState extends State<SplashScreen> {
   late bool isFirstLaunch;
 
   Future<Widget> futureCall() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 2));
 
     bool isFirstLaunch = await MySharedPreferences.instance.getBooleanValue(
       SharedPrefKey.isfirstRun.toString(),
     );
 
     if (!isFirstLaunch) {
-      return Future.value(const LocalizationSelectScreen());
+      return Future.value(LocalizationSelectScreen());
     }
 
     return Future.value(
-      const AuthenticationHandler(),
+      AuthenticationHandler(),
     );
   }
 
@@ -54,17 +54,17 @@ class SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logo: Image.network('https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/flutter-512.png'),
-      title: const Text(
+      title: Text(
         "FRISZ",
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
       ),
-      // gradientBackground: const RadialGradient(colors: [Color(0xFF3eb1cd), Color(0xFF62fda9)]),
+      // gradientBackground:  RadialGradient(colors: [Color(0xFF3eb1cd), Color(0xFF62fda9)]),
       // backgroundColor: Colors.grey.shade400,
       showLoader: true,
-      loadingText: const Text("Loading..."),
+      loadingText: Text("Loading..."),
       futureNavigator: futureCall(),
     );
   }
